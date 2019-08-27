@@ -63,6 +63,5 @@ namespace WPFWebSocket
         }
         protected override void OnError(ErrorEventArgs e) {//에러. 보통 OnClose 호출해 접속을 끊어버림
         }
-
     }
 }
