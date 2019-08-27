@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="btStart" Content="Start Server" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="400" Height="200" FontSize="50" Click="Button_Click"/>
+
     </Grid>
 </Window>
