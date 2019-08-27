@@ -28,7 +28,6 @@ public class DemoPool : MonoBehaviour
         
     }
     public void AddMsg(string msg) {
-        Debug.Log(msg);
         lock (serverMsg)
         {
             serverMsg.Add(msg);
