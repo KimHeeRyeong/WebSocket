@@ -6,16 +6,26 @@ using System.Threading.Tasks;
 using WebSocketSharp;
 using WebSocketSharp.Net;
 using WebSocketSharp.Server;
-
+using Newtonsoft.Json;
 namespace WPFWebSocket
     //Echo는 유저 1개당 1개씩 생성됨
 {
+    public class Num {
+        public int a;
+        public int b;
+        public string c;
+        public float d;
+    }
     public class Echo : WebSocketBehavior//외부에서 메세지를 보낼때 반응
     {
         static List<Echo> listUser = new List<Echo>();
         string nick = "";
         protected override void OnOpen() {//유저가 접속했을때
-            listUser.Add(this);    
+            listUser.Add(this);
+
+            Num a = new Num();
+            string json = JsonConvert.SerializeObject(a);
+            Num b = JsonConvert.DeserializeObject<Num>(json);
         }
         protected override void OnMessage(MessageEventArgs e) {
             lock (listUser)
